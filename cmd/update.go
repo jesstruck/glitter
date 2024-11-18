@@ -15,6 +15,7 @@ import (
 	"golang.org/x/oauth2"
 
 	"github.com/go-git/go-git/v5"
+	"github.com/go-git/go-git/v5/plumbing/transport/ssh"
 	"github.com/google/go-github/v66/github"
 )
 
@@ -66,14 +67,7 @@ to quickly create a Cobra application.`,
 				log.Println(commit)
 
 			}
-			_, err = git.PlainClone(".", false, &git.CloneOptions{
-				URL:      *org.CloneURL,
-				Progress: os.Stdout,
-			})
-			if err != nil {
-				log.Println("hestetestertisser")
-				log.Println(err)
-			}
+			clone(*org.SSHURL)
 
 		}
 	},
@@ -118,6 +112,24 @@ func stash(name string) {
 	// Changes the directory back to the root
 	err = os.Chdir(rootDir)
 	if err != nil {
+		log.Println(err)
+	}
+}
+
+func clone(sshUrl string) {
+	log.Println("Cloning")
+	authMethod, err := ssh.DefaultAuthBuilder("Keymaster")
+	if err != nil {
+		log.Println(err)
+	}
+
+	_, err = git.PlainClone(".", false, &git.CloneOptions{
+		URL:      sshUrl,
+		Progress: os.Stdout,
+		Auth:     authMethod,
+	})
+	if err != nil {
+		log.Println("hestetestertisser")
 		log.Println(err)
 	}
 }
