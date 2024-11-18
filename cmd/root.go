@@ -102,9 +102,9 @@ func init() {
 	rootCmd.PersistentFlags().StringVarP(&flags.Host, "host", "g", "", "If you have a custom Github host")
 	rootCmd.PersistentFlags().StringVarP(&flags.Organisation, "organisation", "o", "", "The Github Organisaton")
 
-	rootCmd.MarkPersistentFlagRequired("token")
-	rootCmd.MarkPersistentFlagRequired("host")
-	rootCmd.MarkPersistentFlagRequired("organisation")
+	// rootCmd.MarkPersistentFlagRequired("token")
+	// rootCmd.MarkPersistentFlagRequired("host")
+	// rootCmd.MarkPersistentFlagRequired("organisation")
 }
 
 func info() {

@@ -129,7 +129,6 @@ func clone(sshUrl string) {
 		Auth:     authMethod,
 	})
 	if err != nil {
-		log.Println("hestetestertisser")
 		log.Println(err)
 	}
 }
