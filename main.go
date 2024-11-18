@@ -6,7 +6,7 @@ package main
 import (
 	"time"
 
-	"github.com/carlmjohnson/versioninfo"
+	"github.com/earthboundkid/versioninfo/v2"
 	"github.com/techchapter/glitter/cmd"
 )
 

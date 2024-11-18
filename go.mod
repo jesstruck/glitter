@@ -3,7 +3,7 @@ module github.com/techchapter/glitter
 go 1.23.2
 
 require (
-	github.com/carlmjohnson/versioninfo v0.22.5
+	github.com/earthboundkid/versioninfo/v2 v2.24.1
 	github.com/go-git/go-git/v5 v5.12.0
 	github.com/google/go-github/v66 v66.0.0
 	github.com/morikuni/aec v1.0.0
