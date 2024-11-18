@@ -59,7 +59,7 @@ to quickly create a Cobra application.`,
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	info()
-	rootCmd.SetVersionTemplate(fmt.Sprintf("%s \nVersion: {{.Version}}\nTime: %s\nSHA: %s\nDirty: %t",
+	rootCmd.SetVersionTemplate(fmt.Sprintf("%s \nVersion: {{.Version}}\nTime: %s\nSHA: %s\nDirty: %t\n\n",
 		aec.LightGreenF.Apply(glitterFigletStr),
 		&lastCommit,
 		revision,
