@@ -56,6 +56,15 @@ to quickly create a Cobra application.`,
 					RemoteName: "origin",
 					Progress:   os.Stdout,
 				})
+				if err == git.NoErrAlreadyUpToDate {
+					log.Println("Already up to date")
+					continue
+				}
+				if err == git.ErrFastForwardMergeNotPossible {
+					log.Println("Fast forward merge not possible")
+					continue
+				}
+
 				cobra.CheckErr(err)
 
 				// Print the latest commit that was just pulled
@@ -70,6 +79,8 @@ to quickly create a Cobra application.`,
 			clone(*org.SSHURL)
 
 		}
+
+		log.Printf("\n\nDone\n\n")
 	},
 }
 
