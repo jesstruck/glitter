@@ -14,7 +14,7 @@ if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]
 	echo "Creating new git tag $NEXT_TAG"
 	git tag "$NEXT_TAG" -m "$NEXT_TAG"
 	git push --tags
-	goreleaser release
+	goreleaser release --clean
 else
 	echo "Cancelled"
 	exit 1
