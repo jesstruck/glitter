@@ -1,0 +1,8 @@
+name: pipeline
+on: 
+  pull_request:
+    branches: [main]
+jobs:
+  call-workflow-passing-data:
+    uses: jesstruck/pipelines/.github/workflows/megalinter.yaml@main
+ 
