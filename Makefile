@@ -1,7 +1,6 @@
 release:
 	./scripts/release.sh
 
-
 install :
 	GOBIN=/Users/jesstruck/go/bin
 	# go install 
